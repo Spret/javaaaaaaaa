@@ -1,0 +1,51 @@
+<html> 
+<head> 
+<title>
+ Przykład obliczenia V i Pc walca
+</title>
+ <script language="JavaScript">
+function dlug(d,x)
+{
+ d_spr=parseFloat(d)
+ x_spr=parseFloat(x)
+ dlug_spr1=Math.pow(d_spr,2) + Math.pow(x_spr,2)
+ dlug_spr2=Math.sqrt(dlug_spr1)
+ document.getElementsByName('drab')[0].value=dlug_spr2.toFixed(2);
+ alert("Drabina="+dlug_spr2.toFixed(2));
+ pokaz1.innerHTML="Drabina="+dlug_spr2.toFixed(2)+"<br>"; 
+}
+function nach(d,x)
+{
+ d_spr=parseFloat(d)
+ x_spr=parseFloat(x)
+ nach1_spr=Math.atan2(d_spr,x_spr)
+ nach2_spr=180*nach1_spr/Math.PI
+ document.getElementsByName('alf')[0].value=nach2_spr.toFixed(2);
+ alert("Alfa="+nach2_spr.toFixed(2));
+ pokaz2.innerHTML="Alfa="+nach2_spr.toFixed(2)+"<br>"; 
+}
+ </script>
+</head> 
+<body> 
+Pobliczanie odległości od drabiny i kąta
+<br> <br>
+<form name="formularz" action="..." onsubmit="dlug(this.d.value,this.x.value); 
+nach(this.d.value,this.x.value);return false"> 
+ Podaj d=
+ <input size="6" name="d">
+ Podaj x=
+ <input size="6" name="x">
+ <br> <br>
+ <input TYPE="submit" Value="oblicz" >
+ <br> <br>
+ Drabina=
+ <input size="6" name="drab">
+ Alfa=
+ <input size="6" name="alf">
+</form>
+<table>
+ <tr id="pokaz1"></tr>
+ <tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>

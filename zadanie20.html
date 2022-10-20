@@ -1,0 +1,54 @@
+<html> 
+<head> 
+<title>
+ Przykład obliczenia Pow i Obw trapezu równoramiennego
+</title>
+ <script language="JavaScript">
+function Pow_spretka(a,b,h)
+{
+ a_spr=parseFloat(a);
+ b_spr=parseFloat(b);
+ h_spr=parseFloat(h);
+ Pow_spr=(a_spr+b_spr)/2*h_spr;
+ document.getElementsByName('pow')[0].value=Pow_spr.toFixed(2);
+ pokaz1.innerHTML="Pole="+Pow_spr.toFixed(2)+"<br>";
+}
+function Obw_spretka(a,b,h)
+{
+ a_spr=parseFloat(a);
+ b_spr=parseFloat(b);
+ h_spr=parseFloat(h);
+ a2_spr=(a_spr-b_spr)/2;
+ c_spr=Math.pow(a2_spr,2) + Math.pow(h_spr,2);
+ c2_spr=Math.sqrt(c_spr);
+ Obw_spr=a_spr+b_spr+c2_spr+c2_spr;
+ document.getElementsByName('obw')[0].value=Obw_spr.toFixed(2);
+ pokaz2.innerHTML="Obwód="+Obw_spr.toFixed(2)+"<br>";
+}
+ </script>
+</head> 
+<body> 
+Obliczanie pole i obwód trapezu równoramiennego
+<br> <br>
+<form name="formularz" action="..." onsubmit="Pow_spretka(this.a.value,this.b.value,this.h.value); 
+Obw_spretka(this.a.value,this.b.value,this.h.value);return false"> 
+ Podaj a=
+ <input size="6" name="a">
+ Podaj b=
+ <input size="6" name="b">
+ Podaj h=
+ <input size="6" name="h">
+ <br> <br>
+ <input TYPE="submit" Value="oblicz" >
+ <br> <br>
+ Pole=
+ <input size="6" name="pow">
+ Obwód=
+ <input size="6" name="obw">
+</form>
+<table>
+ <tr id="pokaz1"></tr>
+ <tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>

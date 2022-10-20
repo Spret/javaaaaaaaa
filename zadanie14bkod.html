@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta charset="utf-8">
+ <script type="text/javascript">
+ function okno_zamknij()
+ {
+ window.close()
+ }
+ </script>
+</head>
+<body>
+<textarea cols=85 rows=16><html>
+<body>
+<div style="color:olive;font-size:39px;">
+<script language="JavaScript">
+var x_spr=prompt("podaj stopnie=","");
+var x=parseFloat(x_spr);
+y_spr=x*Math.PI/180;
+document.write("Radiany="+y_spr.toFixed(2)+"<br>");
+var y_spr=prompt("podaj radiany=","");
+var y=parseFloat(y_spr);
+x_spr=180*y/Math.PI;
+document.write("Stopnie="+x_spr.toFixed(2)+"°<br>");
+</script>
+</div>
+</body>
+</html></textarea><br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij()"/>
+</body>
+</html>
